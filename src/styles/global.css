@@ -1,0 +1,24 @@
+
+*{
+    margin: o;
+}
+html{
+    background-color: rgb(223, 214, 241);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    background-color: rgb(223, 214, 241);
+    width: 100%;
+    max-width: 860px;
+    line-height: 1.5rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+h1{
+    text-align: center;
+    margin: 3rem 0 ;
+    font-size: 2.5rem;
+}
+
+

@@ -1,17 +1,18 @@
 ---
+import BaseLayout from "../layouts/baseLayout.astro"
 
+const {pageTitle,title} = Astro.props
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+
+<style>
+    h2{
+    text-align: center;
+    }
+</style>
+
+
+<BaseLayout pageTitle ={pageTitle}>
+	<h1>Mi primer proyecto con Astro ࣪𖤐</h1>
+	<h2>Mi impresionante subtitulo del blog</h2>
+</BaseLayout>

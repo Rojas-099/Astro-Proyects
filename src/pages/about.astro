@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../layouts/baseLayout.astro"
+
+const pageTitle= "Sobre mi"
+
+const identify = {
+firstName: "Nicolas",
+country: "Colombia",
+occupation: "Codificador",
+hobbies: ["Musica","Fotografia"]
+}
+const skills = ["HTML" ,"CSS" ,"JavaScript" ,"Astro" ,"React"]
+
+const happy = true
+const finished = false
+const goal = 3;
+
+const courses = ["Ingles b1.1", "Comportamiento Emprendedor", "Primeros Auxilios", "BioSeguridad", "Informatica: Microsoft Word, Excel e Internet", "Generacion de Ideas Para un Negocio Innovador", "Formulacion y Evaluacion de Proyectos"]
+
+const skillColor = "rgb(87, 60, 112)";
+const fontWeight = "bold";
+const textCase = "uppercase";
+
+
+---
+
+<BaseLayout pageTitle="{pageTitle}">
+	
+		<style define:vars={{ skillColor, fontWeight, textCase }}>
+			h1 {
+				margin-top: 5rem;
+				color: rgb(87, 60, 112);
+				font-size: 4rem;
+			}
+			.skill{
+				color: var(--skillColor);
+				font-weight:var(--fontWeight);
+				text-transform: var(--textCase);
+			}
+		</style>
+	
+	<body>	
+		
+
+		<h1>{pageTitle}</h1>
+		<h2>... !Mi nuevo sitio en Astro</h2>
+
+		<p>Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda pagina de mi sitio web, !y es la primera que he construido yo mismo¡</p>
+		<p>Este sitio se ira actualizando a medida que vaya aprendiendo nuevas cosas.</p>
+
+
+		<h3>Algunos datos sobre mi:</h3>
+		<ul>
+			<li>Me llamo {identify.firstName}.</li>
+			<li>Vivo en {identify.country} y trabajo como {identify.occupation}.</li>
+			<li>Mis aficiones son: {identify.hobbies[0]} y {identify.hobbies[1]}.</li>
+		</ul>
+		<p>Mis habilidades tecnicas son:</p>
+		<ul>
+			{skills.map((skill) => <li class="skill">{skill}</li>)}
+		</ul>
+
+		{happy && <p>¡Estoy feliz de aprender Astro!</p>}
+		{finished && <p>¡He terminado el curso de Astro!</p>}
+		{goal === 3 ? <p>Mi objetico es terminar en tres días.</p>: <p>Mi objetivo no son 3 días.</p>}
+
+		<p>Mis cursos cortos son:</p>
+		<ul>
+			{courses.map((cursos) => <li>{cursos}</li>)}
+		</ul>
+	</body>
+</BaseLayout>
+
